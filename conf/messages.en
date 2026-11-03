@@ -1,11 +1,11 @@
-service.name = CheckCouncilTax
+service.name = Check and challenge your Council Tax band
 
 site.back = Back
 site.remove = Remove
 site.change = Change
 site.no = No
 site.yes = Yes
-site.continue = Continue
+site.continue = Search
 site.start = Start now
 site.startAgain = Start again
 site.signIn = Sign in
@@ -47,3 +47,14 @@ signedOut.guidance = We did not save your answers.
 
 unauthorised.title = You can’t access this service with this account
 unauthorised.heading = You can’t access this service with this account
+
+propertySearch.title = Search for a property - Check and challenge your Council Tax band - GOV.UK
+propertySearch.heading = Search for a property
+propertySearch.checkYourAnswersLabel = propertySearch
+propertySearch.error.required = Enter a postcode
+propertySearch.error.length = PropertySearch must be 12 characters or less
+propertySearch.error.invalid = Enter a valid UK postcode
+propertySearch.change.hidden = PropertySearch
+
+addressList.title = addressList
+addressList.heading = addressList
