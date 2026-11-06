@@ -21,12 +21,15 @@ import javax.inject.{Inject, Singleton}
 import play.api.mvc.Call
 import controllers.routes
 import pages._
+import pages.PropertySearchPage
 import models._
+import models.NormalMode
 
 @Singleton
 class Navigator @Inject()() {
 
   private val normalRoutes: Page => UserAnswers => Call = {
+    case PropertySearchPage => _ => routes.SearchResultsController.onPageLoad()
     case _ => _ => routes.IndexController.onPageLoad()
   }
 

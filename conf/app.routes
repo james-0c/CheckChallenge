@@ -20,9 +20,11 @@ GET         /account/signed-out                          controllers.auth.Signed
 
 GET         /unauthorised                                controllers.UnauthorisedController.onPageLoad()
 
-GET        /propertySearch                        controllers.PropertySearchController.onPageLoad(mode: Mode = NormalMode)
-POST       /propertySearch                        controllers.PropertySearchController.onSubmit(mode: Mode = NormalMode)
-GET        /changePropertySearch                  controllers.PropertySearchController.onPageLoad(mode: Mode = CheckMode)
-POST       /changePropertySearch                  controllers.PropertySearchController.onSubmit(mode: Mode = CheckMode)
+GET         /propertySearch                        controllers.PropertySearchController.onPageLoad(mode: Mode = NormalMode)
+POST        /propertySearch                        controllers.PropertySearchController.onSubmit(mode: Mode = NormalMode)
+GET         /changePropertySearch                  controllers.PropertySearchController.onPageLoad(mode: Mode = CheckMode)
+POST        /changePropertySearch                  controllers.PropertySearchController.onSubmit(mode: Mode = CheckMode)
 
-GET        /addressList                       controllers.AddressListController.onPageLoad()
+GET         /addressList                       controllers.AddressListController.onPageLoad()
+
+GET         /searchResults                       controllers.SearchResultsController.onPageLoad(mode: Mode = NormalMode)

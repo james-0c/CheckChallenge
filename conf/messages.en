@@ -58,3 +58,12 @@ propertySearch.change.hidden = PropertySearch
 
 addressList.title = addressList
 addressList.heading = addressList
+
+searchResults.title = Search results
+searchResults.heading = Select your property
+searchResults.description = Select the address that matches your property.
+searchResults.tableCaption = Properties found
+searchResults.address = address
+searchResults.band = Council tax band
+searchResults.localAuthority = Local Authority
+searchResults.noResults = No properties found for this postcode.
