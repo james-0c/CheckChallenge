@@ -67,3 +67,6 @@ searchResults.address = address
 searchResults.band = Council tax band
 searchResults.localAuthority = Local Authority
 searchResults.noResults = No properties found for this postcode.
+
+propertyDetails.title = Property details
+propertyDetails.heading = Council Tax property details

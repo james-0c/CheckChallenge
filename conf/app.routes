@@ -28,3 +28,5 @@ POST        /changePropertySearch                  controllers.PropertySearchCon
 GET         /addressList                       controllers.AddressListController.onPageLoad()
 
 GET         /searchResults                       controllers.SearchResultsController.onPageLoad(mode: Mode = NormalMode)
+
+GET         /propertyDetails/:localAuthorityRef         controllers.PropertyDetailsController.onPageLoad(localAuthorityRef: String, mode: Mode = NormalMode)

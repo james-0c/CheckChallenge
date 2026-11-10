@@ -94,7 +94,10 @@ object PropertyData {
         )
     )
 
-    def getPropertyById(postcode: String): Seq[Property] =
+    def getPropertiesByPostcode(postcode: String): Seq[Property] =
         properties.filter(_.address.toUpperCase.contains(postcode.toUpperCase))
+
+    def getPropertyByLocalAuthorityRef(ref: String): Option[Property] =
+        properties.find(_.localAuthorityRef == ref)
 
 }

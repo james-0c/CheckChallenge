@@ -20,12 +20,11 @@ import base.SpecBase
 import play.api.test.FakeRequest
 import play.api.test.Helpers._
 import views.html.SearchResultsView
-import models.userAnswers
+import models.UserAnswers
 import org.mockito.Mockito
 import org.mockito.ArgumentMatchers.any
 import org.scalatestplus.mockito.MockitoSugar
 import play.api.inject.bind
-import play.api.test.Helper._
 import pages.PropertySearchPage
 import repositories.SessionRepository
 import views.html.SearchResultsView
@@ -42,7 +41,7 @@ class SearchResultsControllerSpec extends SpecBase with MockitoSugar {
       val application = applicationBuilder(userAnswers = Some(userAnswers)).build()
 
       running(application) {
-        val request = FakeRequest(GET, routes.SearchResultsController.onPageLoad(models.NormalMode).url)
+        val request = FakeRequest(GET, routes.SearchResultsController.onPageLoad().url)
 
         val result = route(application, request).value
 

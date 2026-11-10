@@ -40,7 +40,7 @@ class SearchResultsController @Inject()(
 
       val postcode = request.userAnswers.get(PropertySearchPage).get
 
-      val properties = PropertyData.getPropertyById(postcode)
+      val properties = PropertyData.getPropertiesByPostcode(postcode)
 
       Ok(view(properties, mode))
   }

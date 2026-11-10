@@ -14,7 +14,7 @@
  * limitations under the License.
  *@
 
-@import models.{Mode, Property}
+@import models.{Mode, NormalMode, Property}
 
 @this(
         layout: templates.Layout,
@@ -65,7 +65,10 @@
                         <tr class="govuk-table__row">
 
                             <th scope="row" class="govuk-table__header">
+                                <a class="govuk-link"
+                                    href="@routes.PropertyDetailsController.onPageLoad(property.localAuthorityRef)">
                                     @property.address
+                                </a>
                             </th>
                                                             <!-- th and td defines header and data cells -->
                             <td class=govuk-table__cell>
