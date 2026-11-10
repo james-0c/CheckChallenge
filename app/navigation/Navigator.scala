@@ -30,7 +30,22 @@ class Navigator @Inject()() {
 
   private val normalRoutes: Page => UserAnswers => Call = {
     case PropertySearchPage => _ => routes.SearchResultsController.onPageLoad()
+    
     case _ => _ => routes.IndexController.onPageLoad()
+    
+    case CouncilTaxResponsibilityPage => 
+      answers =>
+        answers.get(CouncilTaxResponsibilityPage) match {
+          case Some(CouncilTaxResponsibility.No) =>
+            routes.NotResponsibleController.onPageLoad()
+
+          case Some(CouncilTaxResponsibilityPage.Yes) |
+               Some(CouncilTaxResponsibility.Acting) =>
+            routes.CheckYourAnswersController.onPageLoad()
+
+          case _ =>
+            routes.IndexController.onPageLoad()
+        }
   }
 
   private val checkRouteMap: Page => UserAnswers => Call = {

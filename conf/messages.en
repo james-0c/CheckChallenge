@@ -70,3 +70,12 @@ searchResults.noResults = No properties found for this postcode.
 
 propertyDetails.title = Property details
 propertyDetails.heading = Council Tax property details
+
+councilTaxResponsibility.title = Are you responsible for this properties Council Tax?
+councilTaxResponsibility.heading = Are you responsible for paying Council Tax on this property?
+councilTaxResponsibility.yes = Yes
+councilTaxResponsibility.no = No
+councilTaxResponsibility.acting = I am acting on behalf of somebody else.
+councilTaxResponsibility.checkYourAnswersLabel = Are you responsible for this properties Council Tax?
+councilTaxResponsibility.error.required = Please select and option.
+councilTaxResponsibility.change.hidden = CouncilTaxResponsibility
