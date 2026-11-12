@@ -16,7 +16,9 @@
 
 @this(
     layout: templates.Layout,
-    govukSummaryList: GovukSummaryList
+    govukSummaryList: GovukSummaryList,
+    govukButton: GovukButton,
+    formHelper: FormWithCSRF
 )
 
 @(list: SummaryList)(implicit request: Request[_], messages: Messages)
@@ -26,4 +28,10 @@
     <h1 class="govuk-heading-xl">@messages("checkYourAnswers.heading")</h1>
 
     @govukSummaryList(list)
+
+    @formHelper(action = routes.CheckYourAnswersController.onSubmit()) {
+        @govukButton(
+            ButtonViewModel(messages("checkYourAnswers.confirm"))
+        )
+    }
 }

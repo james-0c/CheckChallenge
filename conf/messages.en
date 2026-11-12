@@ -79,3 +79,13 @@ councilTaxResponsibility.acting = I am acting on behalf of somebody else.
 councilTaxResponsibility.checkYourAnswersLabel = Are you responsible for this properties Council Tax?
 councilTaxResponsibility.error.required = Please select and option.
 councilTaxResponsibility.change.hidden = CouncilTaxResponsibility
+
+noPermission.title = You cannot continue with this service.
+noPermission.heading = You cannot continue with this service.
+noPermission.paragraph = paragraph xyz
+
+checkYourAnswers.confirm = Confirm
+
+confirmation.title = confirmation
+confirmation.heading = Your answers have been submitted
+confirmation.message = You have completed the CCA process.

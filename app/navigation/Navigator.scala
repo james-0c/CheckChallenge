@@ -37,9 +37,9 @@ class Navigator @Inject()() {
       answers =>
         answers.get(CouncilTaxResponsibilityPage) match {
           case Some(CouncilTaxResponsibility.No) =>
-            routes.NotResponsibleController.onPageLoad()
+            routes.NoPermissionController.onPageLoad()
 
-          case Some(CouncilTaxResponsibilityPage.Yes) |
+          case Some(CouncilTaxResponsibility.Yes) |
                Some(CouncilTaxResponsibility.Acting) =>
             routes.CheckYourAnswersController.onPageLoad()
 

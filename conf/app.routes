@@ -35,3 +35,11 @@ GET        /councilTaxResponsibility                        controllers.CouncilT
 POST       /councilTaxResponsibility                        controllers.CouncilTaxResponsibilityController.onSubmit(mode: Mode = NormalMode)
 GET        /changeCouncilTaxResponsibility                  controllers.CouncilTaxResponsibilityController.onPageLoad(mode: Mode = CheckMode)
 POST       /changeCouncilTaxResponsibility                  controllers.CouncilTaxResponsibilityController.onSubmit(mode: Mode = CheckMode)
+
+GET        /noPermission                       controllers.NoPermissionController.onPageLoad()
+
+POST        /check-your-answers                 controllers.CheckYourAnswersController.onSubmit()
+
+GET         /confirmation                       controllers.ConfirmationController.onPageLoad()
+
+GET        /confirmation                       controllers.ConfirmationController.onPageLoad()

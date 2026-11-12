@@ -18,7 +18,8 @@ package models
 
 case class SelectedProperty(
     address: String,
-    councilTaxBand: String
+    councilTaxBand: String,
+    localAuthorityRef: String
 )
 
 object SelectedProperty {

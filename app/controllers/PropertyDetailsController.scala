@@ -51,7 +51,8 @@ class PropertyDetailsController @Inject()(
                                     SelectedPropertyPage,
                                     SelectedProperty(
                                         address = property.address,
-                                        councilTaxBand = property.councilTaxBand
+                                        councilTaxBand = property.councilTaxBand,
+                                        localAuthorityRef = property.localAuthorityRef
                                     )
                                 )
                             )
