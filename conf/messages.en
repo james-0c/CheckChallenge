@@ -1,11 +1,11 @@
-service.name = CheckCouncilTax
+service.name = Check and challenge your Council Tax band
 
 site.back = Back
 site.remove = Remove
 site.change = Change
 site.no = No
 site.yes = Yes
-site.continue = Continue
+site.continue = Search
 site.start = Start now
 site.startAgain = Start again
 site.signIn = Sign in
@@ -47,3 +47,45 @@ signedOut.guidance = We did not save your answers.
 
 unauthorised.title = You can’t access this service with this account
 unauthorised.heading = You can’t access this service with this account
+
+propertySearch.title = Search for a property - Check and challenge your Council Tax band - GOV.UK
+propertySearch.heading = Search for a property
+propertySearch.checkYourAnswersLabel = propertySearch
+propertySearch.error.required = Enter a postcode
+propertySearch.error.length = PropertySearch must be 12 characters or less
+propertySearch.error.invalid = Enter a valid UK postcode
+propertySearch.change.hidden = PropertySearch
+
+addressList.title = addressList
+addressList.heading = addressList
+
+searchResults.title = Search results
+searchResults.heading = Select your property
+searchResults.description = Select the address that matches your property.
+searchResults.tableCaption = Properties found
+searchResults.address = address
+searchResults.band = Council tax band
+searchResults.localAuthority = Local Authority
+searchResults.noResults = No properties found for this postcode.
+
+propertyDetails.title = Property details
+propertyDetails.heading = Council Tax property details
+
+councilTaxResponsibility.title = Are you responsible for this properties Council Tax?
+councilTaxResponsibility.heading = Are you responsible for paying Council Tax on this property?
+councilTaxResponsibility.yes = Yes
+councilTaxResponsibility.no = No
+councilTaxResponsibility.acting = I am acting on behalf of somebody else.
+councilTaxResponsibility.checkYourAnswersLabel = Are you responsible for this properties Council Tax?
+councilTaxResponsibility.error.required = Please select and option.
+councilTaxResponsibility.change.hidden = CouncilTaxResponsibility
+
+noPermission.title = You cannot continue with this service.
+noPermission.heading = You cannot continue with this service.
+noPermission.paragraph = paragraph xyz
+
+checkYourAnswers.confirm = Confirm
+
+confirmation.title = confirmation
+confirmation.heading = Your answers have been submitted
+confirmation.message = You have completed the CCA process.

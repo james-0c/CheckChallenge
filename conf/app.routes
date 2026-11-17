@@ -19,3 +19,28 @@ GET         /account/sign-out                            controllers.auth.AuthCo
 GET         /account/signed-out                          controllers.auth.SignedOutController.onPageLoad()
 
 GET         /unauthorised                                controllers.UnauthorisedController.onPageLoad()
+
+GET         /propertySearch                        controllers.PropertySearchController.onPageLoad(mode: Mode = NormalMode)
+POST        /propertySearch                        controllers.PropertySearchController.onSubmit(mode: Mode = NormalMode)
+GET         /changePropertySearch                  controllers.PropertySearchController.onPageLoad(mode: Mode = CheckMode)
+POST        /changePropertySearch                  controllers.PropertySearchController.onSubmit(mode: Mode = CheckMode)
+
+GET         /addressList                       controllers.AddressListController.onPageLoad()
+
+GET         /searchResults                       controllers.SearchResultsController.onPageLoad(mode: Mode = NormalMode)
+
+GET         /propertyDetails/:localAuthorityRef         controllers.PropertyDetailsController.onPageLoad(localAuthorityRef: String, mode: Mode = NormalMode)
+POST        /propertyDetails/:localAuthorityRef         controllers.PropertyDetailsController.onSubmit(localAuthorityRef: String, mode: Mode = NormalMode)
+
+GET        /councilTaxResponsibility                        controllers.CouncilTaxResponsibilityController.onPageLoad(mode: Mode = NormalMode)
+POST       /councilTaxResponsibility                        controllers.CouncilTaxResponsibilityController.onSubmit(mode: Mode = NormalMode)
+GET        /changeCouncilTaxResponsibility                  controllers.CouncilTaxResponsibilityController.onPageLoad(mode: Mode = CheckMode)
+POST       /changeCouncilTaxResponsibility                  controllers.CouncilTaxResponsibilityController.onSubmit(mode: Mode = CheckMode)
+
+GET        /noPermission                       controllers.NoPermissionController.onPageLoad()
+
+POST        /check-your-answers                 controllers.CheckYourAnswersController.onSubmit()
+
+GET         /confirmation                       controllers.ConfirmationController.onPageLoad()
+
+GET        /confirmation                       controllers.ConfirmationController.onPageLoad()
