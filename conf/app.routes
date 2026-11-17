@@ -30,6 +30,7 @@ GET         /addressList                       controllers.AddressListController
 GET         /searchResults                       controllers.SearchResultsController.onPageLoad(mode: Mode = NormalMode)
 
 GET         /propertyDetails/:localAuthorityRef         controllers.PropertyDetailsController.onPageLoad(localAuthorityRef: String, mode: Mode = NormalMode)
+POST        /propertyDetails/:localAuthorityRef         controllers.PropertyDetailsController.onSubmit(localAuthorityRef: String, mode: Mode = NormalMode)
 
 GET        /councilTaxResponsibility                        controllers.CouncilTaxResponsibilityController.onPageLoad(mode: Mode = NormalMode)
 POST       /councilTaxResponsibility                        controllers.CouncilTaxResponsibilityController.onSubmit(mode: Mode = NormalMode)

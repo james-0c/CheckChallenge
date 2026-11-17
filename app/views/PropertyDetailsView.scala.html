@@ -15,22 +15,39 @@
  *@
 
 @import models.{Mode, Property}
-@this(layout: templates.Layout)
+@this(
+    layout: templates.Layout,
+    formHelper: FormWithCSRF
+)
 
 @(property: Property, mode: Mode)(implicit request: Request[_], messages: Messages)
 
 @layout(pageTitle = messages("propertyDetails.title")) {
-
-    <h1 class="govuk-heading-xl">@messages("propertyDetails.heading")</h1>
+    
+    <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">
+        Property information for
+        </span>
+        @property.address
+    </h1>
 
     <dl class="govuk-summary-list">
 
         <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-                Address
+                Local Authority
             </dt>
             <dd class="govuk-summary-list__value">
-                @property.address
+                @property.localAuthority
+            </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Local authority reference number
+            </dt>
+            <dd class="govuk-summary-list__value">
+                @property.localAuthorityRef
             </dd>
         </div>
 
@@ -43,21 +60,30 @@
             </dd>
         </div>
 
-        <div class="govuk=-summary-list__row">
+        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-                Effective date
+                Improvement indicator
             </dt>
             <dd class="govuk-summary-list__value">
-                @property.effectiveDate
+                @property.improvementIndicator
             </dd>
         </div>
 
         <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-                Local Council
+                With effect from
             </dt>
             <dd class="govuk-summary-list__value">
-                @property.localAuthority
+                @PropertyData.getFormattedEffectiveDate(property) @* Alternatively use @property.effectiveDate.format(DateTimeFormatter.ofPattern("MMMM d yyyy")) *@
+            </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Mixed-use property
+            </dt>
+            <dd class="govuk-summary-list__value">
+                @property.mixedUseIndicator
             </dd>
         </div>
         
@@ -71,6 +97,14 @@
         </div>
     
     </dl>
+
+    @formHelper(action = routes.PropertyDetailsController.onSubmit(property.localAuthorityRef)) {
+        <div class="govuk-button-group">
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+                Challenge this Council Tax band
+            </button>
+        </div>
+    }
 
     <p class="govuk-body">
         <a class="govuk-back-link" href="@routes.SearchResultsController.onPageLoad()">

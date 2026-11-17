@@ -20,7 +20,7 @@ import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendBaseController
 import views.html.PropertyDetailsView
 import controllers.actions._
 import javax.inject.Inject
-import models.{Mode, PropertyData, SelectedProperty}
+import models.{CheckMode, Mode, NormalMode, PropertyData, SelectedProperty}
 import play.api.i18n.{I18nSupport, MessagesApi}
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
 import forms._
@@ -59,6 +59,38 @@ class PropertyDetailsController @Inject()(
                             _ <- sessionRepository.set(updatedAnswers)
                         }
                         yield Ok(view(property, mode))
+
+                    case None =>
+                        Future.successful(NotFound)
+                }
+        }
+
+    def onSubmit(localAuthorityRef: String, mode: Mode): Action[AnyContent] =
+        (identify andThen getData andThen requireData).async {
+            implicit request =>
+                PropertyData.getPropertyByLocalAuthorityRef(localAuthorityRef) match {
+                    case Some(property) =>
+                        for {
+                            updatedAnswers <- Future.fromTry(
+                                request.userAnswers.set(
+                                    SelectedPropertyPage,
+                                    SelectedProperty(
+                                        address = property.address,
+                                        councilTaxBand = property.councilTaxBand,
+                                        localAuthorityRef = property.localAuthorityRef
+                                    )
+                                )
+                            )
+                            _ <- sessionRepository.set(updatedAnswers)
+                        } yield {
+                            mode match {
+                                case NormalMode =>
+                                    Redirect(routes.CouncilTaxResponsibilityController.onPageLoad(NormalMode))
+
+                                case CheckMode =>
+                                    Redirect(routes.CheckYourAnswersController.onPageLoad())
+                            }
+                        }
 
                     case None =>
                         Future.successful(NotFound)

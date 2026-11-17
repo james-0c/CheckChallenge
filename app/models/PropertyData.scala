@@ -17,8 +17,11 @@
 package models
 
 import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 object PropertyData {
+
+    private val longDateFormatter: DateTimeFormatter = DateTimeFormatter.ofPattern("d MMMM yyyy")
 
     private val properties = Seq(
         Property(
@@ -27,9 +30,9 @@ object PropertyData {
             localAuthority = "Westminster",
             localAuthorityRef = "T185000000100X",
             councilTaxBand = "H",
-            improvementIndicator = false,
+            improvementIndicator = "No",
             effectiveDate = LocalDate.of(1993, 4, 1),
-            mixedUseIndicator = true,
+            mixedUseIndicator = "Yes",
             courtCode = "None"
         ),
 
@@ -39,9 +42,9 @@ object PropertyData {
             localAuthority = "Westminster",
             localAuthorityRef = "T2902010000003",
             councilTaxBand = "H",
-            improvementIndicator = false,
+            improvementIndicator = "No",
             effectiveDate = LocalDate.of(1993, 4, 1),
-            mixedUseIndicator = true,
+            mixedUseIndicator = "Yes",
             courtCode = "None"
         ),
 
@@ -51,9 +54,9 @@ object PropertyData {
             localAuthority = "Lewisham",
             localAuthorityRef = "02512000900012",
             councilTaxBand = "C",
-            improvementIndicator = false,
+            improvementIndicator = "No",
             effectiveDate = LocalDate.of(2003, 4, 15),
-            mixedUseIndicator = false,
+            mixedUseIndicator = "No",
             courtCode = "None"
         ),
 
@@ -63,9 +66,9 @@ object PropertyData {
             localAuthority = "Lewisham",
             localAuthorityRef = "02512000900027",
             councilTaxBand = "C",
-            improvementIndicator = false,
+            improvementIndicator = "No",
             effectiveDate = LocalDate.of(2003, 4, 15),
-            mixedUseIndicator = false,
+            mixedUseIndicator = "No",
             courtCode = "None"
         ),
 
@@ -75,9 +78,9 @@ object PropertyData {
             localAuthority = "Lewisham",
             localAuthorityRef = "02512000900031",
             councilTaxBand = "C",
-            improvementIndicator = false,
+            improvementIndicator = "No",
             effectiveDate = LocalDate.of(2003, 4, 15),
-            mixedUseIndicator = false,
+            mixedUseIndicator = "No",
             courtCode = "None"
         ),
 
@@ -87,9 +90,9 @@ object PropertyData {
             localAuthority = "Lewisham",
             localAuthorityRef = "02512000900099",
             councilTaxBand = "D",
-            improvementIndicator = false,
+            improvementIndicator = "No",
             effectiveDate = LocalDate.of(2003, 3, 11),
-            mixedUseIndicator = false,
+            mixedUseIndicator = "No",
             courtCode = "None"
         )
     )
@@ -99,5 +102,8 @@ object PropertyData {
 
     def getPropertyByLocalAuthorityRef(ref: String): Option[Property] =
         properties.find(_.localAuthorityRef == ref)
+
+    def getFormattedEffectiveDate(property: Property): String =
+        property.effectiveDate.format(longDateFormatter)
 
 }

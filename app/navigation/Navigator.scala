@@ -24,14 +24,13 @@ import pages._
 import pages.PropertySearchPage
 import models._
 import models.NormalMode
+import models.CouncilTaxResponsibility
 
 @Singleton
 class Navigator @Inject()() {
 
   private val normalRoutes: Page => UserAnswers => Call = {
     case PropertySearchPage => _ => routes.SearchResultsController.onPageLoad()
-    
-    case _ => _ => routes.IndexController.onPageLoad()
     
     case CouncilTaxResponsibilityPage => 
       answers =>
@@ -46,6 +45,9 @@ class Navigator @Inject()() {
           case _ =>
             routes.IndexController.onPageLoad()
         }
+
+    case _ =>
+      _ => routes.IndexController.onPageLoad()
   }
 
   private val checkRouteMap: Page => UserAnswers => Call = {

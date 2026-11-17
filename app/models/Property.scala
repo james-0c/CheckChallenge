@@ -24,9 +24,9 @@ case class Property(
     localAuthority: String,
     localAuthorityRef: String,
     councilTaxBand: String,
-    improvementIndicator: Boolean,
+    improvementIndicator: String,
     effectiveDate: LocalDate,
-    mixedUseIndicator: Boolean,
+    mixedUseIndicator: String,
     courtCode: String
 )
 
