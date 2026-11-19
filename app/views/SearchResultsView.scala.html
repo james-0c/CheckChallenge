@@ -26,8 +26,8 @@
 @layout(pageTitle = titleNoForm(messages("searchResults.title"))) {
 
     <h1 class="govuk-heading-xl">@messages("searchResults.heading")</h1>
-        @messages("searchResults.heading")
-    </h1>
+
+    
 
     <p class="govuk-body">
         @messages("searchResults.description")
@@ -59,7 +59,7 @@
 
             <tbody class="govuk-table__body"> <!-- tbody contains property records -->
 
-                @for(property <- properties) {
+
 
                     @for(property <- properties) {
                         <tr class="govuk-table__row">
@@ -90,8 +90,7 @@
                 @messages("searchResults.noResults")
             </p>
 
-        }
-
     }
 }
+
 
