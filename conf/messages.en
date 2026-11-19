@@ -33,6 +33,10 @@ index.guidance = Welcome to your new frontend. Please see the README file for a 
 
 checkYourAnswers.title = Check your answers
 checkYourAnswers.heading = Check your answers
+checkYourAnswers.confirm = Confirm
+checkYourAnswers.property = Property
+checkYourAnswers.responsibility = Responsibility
+checkYourAnswers.band = Council Tax band
 
 journeyRecovery.continue.title = Sorry, there is a problem with the service
 journeyRecovery.continue.heading = Sorry, there is a problem with the service
@@ -60,11 +64,11 @@ addressList.title = addressList
 addressList.heading = addressList
 
 searchResults.title = Search results
-searchResults.heading = Select your property
+searchResults.heading = Search results 
 searchResults.description = Select the address that matches your property.
 searchResults.tableCaption = Properties found
-searchResults.address = address
-searchResults.band = Council tax band
+searchResults.address = Address
+searchResults.band = Council Tax band
 searchResults.localAuthority = Local Authority
 searchResults.noResults = No properties found for this postcode.
 
@@ -82,9 +86,7 @@ councilTaxResponsibility.change.hidden = CouncilTaxResponsibility
 
 noPermission.title = You cannot continue with this service.
 noPermission.heading = You cannot continue with this service.
-noPermission.paragraph = paragraph xyz
-
-checkYourAnswers.confirm = Confirm
+noPermission.paragraph = You can now return to the start.
 
 confirmation.title = confirmation
 confirmation.heading = Your answers have been submitted
